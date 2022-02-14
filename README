@@ -1,0 +1,58 @@
+
+===============================================================
+* Running the application
+===============================================================
+
+  command:   mvn spring-boot:run
+
+===============================================================
+* Request samples
+===============================================================
+
+  postman collection: in Doc/test-offer-postman_collection
+
+===============================================================
+* Build
+===============================================================
+
+  command:   mvn clean install
+
+===============================================================
+* API
+===============================================================
+
+Best to document APIs using Swagger, but running out of time so here it is:
+
+* GET - http://localhost:8181/usermanager/api/users?username=JoeBlog1
+- Retrieves a registered user by name
+- Input parameter: request parameter: username
+- Output result: the registered user in json format
+    Example:
+    {
+      "username": "JoeBlog2",
+      "dateOfBirth": "2004-02-12",
+      "country":"FRANCE",
+      "phoneNumber":"123456789",
+      "gender": "MALE"
+    }
+
+* PUT - http://localhost:8181/usermanager/api/users
+- Registers the user specified in the request body
+- Input parameter: request body: json
+  Example:
+    {
+      "username": "JoeBlog2",
+      "dateOfBirth": "2004-02-12",
+      "country":"FRANCE",
+      "phoneNumber":"123456789",
+      "gender": "MALE"
+    }
+- Output result: the registered user in json format
+    Example:
+    {
+      "username": "JoeBlog2",
+      "dateOfBirth": "2004-02-12",
+      "country":"FRANCE",
+      "phoneNumber":"123456789",
+      "gender": "MALE"
+    }
