@@ -1,1 +1,77 @@
-# spring-boot-h2-hibernate
+
+* Goal
+
+What should be done:
+A Springboot API that exposes two services:
+• one that allows to register a user
+• one that displays the details of a registered user
+A user is defined by:
+• a user name
+• a birthdate
+• a country of residence
+A user has optional attributes:
+• a phone number
+• a gender
+Only adult French residents are allowed to create an account!
+Inputs must be validated and return proper error messages/http statuses.
+Deliverables:
+• Source code (Github link for example)
+• Documentation (how to build from sources, how to use the API)
+• Request samples (I.e. Postman collection)
+Bonuses:
+• Include an embedded database in your project to facilitate the installation and execution by someone else
+• Use AOP to log inputs and outputs of each call as well as the processing time
+• Feel free to enrich the model as you see fit
+Make sure you pay special attention to code and test quality.
+
+* Running the application
+
+  command:   mvn spring-boot:run
+
+
+* Request samples
+
+
+  postman collection: in Doc/test-offer-postman_collection
+
+* Build
+
+  command:   mvn clean install
+
+* API
+
+Best to document APIs using Swagger, but running out of time so here it is:
+
+* GET - http://localhost:8181/usermanager/api/users?username=JoeBlog1
+- Retrieves a registered user by name
+- Input parameter: request parameter: username
+- Output result: the registered user in json format
+    Example:
+    {
+      "username": "JoeBlog2",
+      "dateOfBirth": "2004-02-12",
+      "country":"FRANCE",
+      "phoneNumber":"123456789",
+      "gender": "MALE"
+    }
+
+* PUT - http://localhost:8181/usermanager/api/users
+- Registers the user specified in the request body
+- Input parameter: request body: json
+  Example:
+    {
+      "username": "JoeBlog2",
+      "dateOfBirth": "2004-02-12",
+      "country":"FRANCE",
+      "phoneNumber":"123456789",
+      "gender": "MALE"
+    }
+- Output result: the registered user in json format
+    Example:
+    {
+      "username": "JoeBlog2",
+      "dateOfBirth": "2004-02-12",
+      "country":"FRANCE",
+      "phoneNumber":"123456789",
+      "gender": "MALE"
+    }
